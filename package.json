@@ -34,7 +34,9 @@
     "url": "https://github.com/lukastaegert/fluent-arguments.git"
   },
   "keywords": [
-    "function arguments", "fluent", "API"
+    "function arguments",
+    "fluent",
+    "API"
   ],
   "bugs": {
     "url": "https://github.com/lukastaegert/fluent-arguments/issues"
@@ -49,5 +51,8 @@
     "standard": "^8.0.0",
     "testdouble": "^1.6.0",
     "validate-commit-msg": "^2.8.0"
+  },
+  "dependencies": {
+    "object-assign": "^4.1.0"
   }
 }
