@@ -4,7 +4,7 @@
 
 ## The problem
 
-Let us assume you wrote a nice library `my-rainbow` for creating rainbow-like patterns. To create a pattern with a
+Let's assume you wrote a nice library `my-rainbow` for creating rainbow-like patterns. To create a pattern with a
 specific order of colors, you could have implemented something like this:
 ```javascript
 var createRainbow = require('my-rainbow').createRainbow
@@ -96,12 +96,4 @@ specialRainbow = createRainbow('red', 'green', withFlashesIn('white'), 'yellow',
 // calls createRainbowHandler([{value: 'red'}, {value: 'green', withFlashesIn: 'white'}, {value: 'yellow'}, {value: 'blue'}])
 specialRainbow = createRainbow('red', 'green', withSparkles, withFlashesIn('white'), 'yellow', 'blue')
 // calls createRainbowHandler([{value: 'red'}, {value: 'green', withFlashesIn: 'white', sparkling: true}, {value: 'yellow'}, {value: 'blue'}])
-```
-
-Some Notes To Myself
-
-```javascript
-// function() {return {value: arguments[0], sparkling: true, __FlArg__: 'N'}}
-// The __FlArg__ flag could be part of the prototype - easier copying
-// {sparkling: true, __FlArg__: 'X'}
 ```

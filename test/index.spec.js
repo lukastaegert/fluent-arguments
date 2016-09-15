@@ -54,6 +54,16 @@ describe('a fluent argument function', function () {
       setup: { args: [ 'firstArg', 'secondArg' ], extra: { a: 1 } },
       callParams: [ 1, 2 ],
       expectedArgs: [ { value: 1 }, { firstArg: 1, secondArg: 2, a: 1 } ]
+    }, {
+      description: 'extending the previous argument with extra data',
+      setup: { extra: { a: 1 }, extendsPrevious: true },
+      callParams: null,
+      expectedArgs: [ { value: 1, a: 1 } ]
+    }, {
+      description: 'extending the previous argument overwriting a field',
+      setup: { extra: { value: 7, a: 1 }, extendsPrevious: true },
+      callParams: null,
+      expectedArgs: [ { value: 7, a: 1 } ]
     } ]
 
     dataProvider.forEach(function (testData) {
@@ -67,5 +77,11 @@ describe('a fluent argument function', function () {
         verify(handler(testData.expectedArgs))
       })
     })
+  })
+
+  it('should properly handling using an extending arg as the first argument', function () {
+    var fluentArg = createArg({ extra: { a: 1 }, extendsPrevious: true })
+    fluentFunc(fluentArg)
+    verify(handler([ { a: 1 } ]))
   })
 })
