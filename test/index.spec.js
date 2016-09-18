@@ -84,4 +84,10 @@ describe('a fluent argument function', function () {
     fluentFunc(fluentArg)
     verify(handler([ { a: 1 } ]))
   })
+
+  it('should properly handle using the same argument twice', function () {
+    var fluentArg = createArg({ args: [ 'arg' ] })
+    fluentFunc(fluentArg(1), fluentArg(2))
+    verify(handler([ { arg: 1 }, {arg: 2} ]))
+  })
 })

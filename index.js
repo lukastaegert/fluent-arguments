@@ -20,9 +20,9 @@ function getBasicArgObject (setup) {
 }
 
 function createArg (setup) {
-  var fluentArg = getBasicArgObject(setup)
   if (setup.args) {
     return function () {
+      var fluentArg = getBasicArgObject(setup)
       var args = arguments
       setup.args.forEach(function (arg, index) {
         fluentArg[ arg ] = args[ index ]
@@ -30,7 +30,7 @@ function createArg (setup) {
       return fluentArg
     }
   } else {
-    return fluentArg
+    return getBasicArgObject(setup)
   }
 }
 
