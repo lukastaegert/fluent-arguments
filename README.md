@@ -35,14 +35,12 @@ this API change while maintaining backward compatibility?
    scales much better, but readability starts to suffer. And it is not obvious which would be valid options.
 
 ## Fluent arguments
-
-With `fluent-arguments`, you can easily specify the following API:
+`fluent-arguments` makes it trivial to implement the following API:
 ```javascript
 var sparkling = require('my-rainbow').sparkling
 var specialRainbow = createRainbow('red', sparkling('green'), 'yellow', 'blue')
 ```
-Isn't this a solution which is as easily readable as approach 1 while being about as maintainable and modular
-as approach 2?
+which is arguably as easily readable as approach 1 while being about as maintainable and modular as approach 2.
 
 Fluent arguments can also be configured to describe previous arguments. To that end, let us assume you also want to
 specify that some colored areas occasionally flash in other colors:
@@ -61,17 +59,16 @@ var specialRainbow = createRainbow('red', 'green', withSparkles, withFlashesIn('
 ```
 
 ## How to build such an API
-
 `fluent-arguments` provides two exports, `createArg` and `createFunc`. With `createFunc`, you create a function that
 receives a variable number of arguments, each of which can be fluent arguments:
 ```javascript
-var createFunc = require('fluent-arguments').createFunc
+var fa = require('fluent-arguments')
 
 function createRainbowHandler(args) {
   // some implementation
 }
 
-var createRainbow = createFunc(createRainbowHandler)
+var createRainbow = fa.createFunc(createRainbowHandler)
 var specialRainbow = createRainbow('red', 'green', 'yellow', 'blue')
 // calls createRainbowHandler([{value: 'red'}, {value: 'green'}, {value: 'yellow'}, {value: 'blue'}])
 ```
@@ -79,11 +76,9 @@ var specialRainbow = createRainbow('red', 'green', 'yellow', 'blue')
 As you can see, normal arguments become argument objects with the original value stored as `value`. Now, `createArg`
 allows you to create special fluent arguments which are parsed differently by `createRainbow`:
 ```javascript
-var createArg = require('fluent-arguments').createArg
-
-var sparkling     = createArg({args: ['value'], extra: {sparkling: true}})
-var withFlashesIn = createArg({args: ['withFlashesIn'], extendsPrevious: true})
-var withSparkles  = createArg({extra: {sparkling: true}, extendsPrevious: true})
+var sparkling     = fa.createArg({args: ['value'], extra: {sparkling: true}})
+var withFlashesIn = fa.createArg({args: ['withFlashesIn'], extendsPrevious: true})
+var withSparkles  = fa.createArg({extra: {sparkling: true}, extendsPrevious: true})
 ```
 
 `createArg` receives an object which can have any of the following fields, all of which are optional:
