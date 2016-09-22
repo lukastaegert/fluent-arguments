@@ -1,4 +1,4 @@
-const objectAssign = require('object-assign')
+var objectAssign = require('object-assign')
 
 var EXTENDING_ARG_IDENTIFIER = 'X'
 var NON_EXTENDING_ARG_IDENTIFIER = 'N'
