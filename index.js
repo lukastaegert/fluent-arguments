@@ -39,7 +39,7 @@ function parseFluentArgs (args) {
   Array.prototype.slice.call(args).forEach(function (arg) {
     if (isExtendingArg(arg)) {
       var previousArgIndex = Math.max(0, result.length - 1)
-      result[ previousArgIndex ] = Object.assign({}, result[ previousArgIndex ], arg)
+      result[ previousArgIndex ] = objectAssign({}, result[ previousArgIndex ], arg)
     } else {
       result.push(isFluentArg(arg) ? arg : { value: arg })
     }
