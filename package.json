@@ -44,7 +44,7 @@
     "validate-commit-msg": "latest"
   },
   "dependencies": {
-    "object-assign": "4.1.1"
+    "object-assign": "~4.1.1"
   },
   "scripts": {
     "test": "mocha",
