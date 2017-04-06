@@ -2,8 +2,8 @@ var objectAssign = require('object-assign')
 
 var EXTENDING_ARG_IDENTIFIER = 'X'
 var NON_EXTENDING_ARG_IDENTIFIER = 'N'
-var extendingPrototype = Object.defineProperty({}, '__FlArg__', { value: EXTENDING_ARG_IDENTIFIER })
-var nonExtendingPrototype = Object.defineProperty({}, '__FlArg__', { value: NON_EXTENDING_ARG_IDENTIFIER })
+var extendingPrototype = Object.defineProperty({}, '__FlArg__', {value: EXTENDING_ARG_IDENTIFIER})
+var nonExtendingPrototype = Object.defineProperty({}, '__FlArg__', {value: NON_EXTENDING_ARG_IDENTIFIER})
 
 function isFluentArg (arg) {
   return arg.__FlArg__
@@ -25,7 +25,7 @@ function createArg (setup) {
       var fluentArg = getBasicArgObject(setup)
       var args = arguments
       setup.args.forEach(function (arg, index) {
-        fluentArg[ arg ] = args[ index ]
+        fluentArg[arg] = args[index]
       })
       return fluentArg
     }
@@ -39,9 +39,9 @@ function parseFluentArgs (args) {
   Array.prototype.slice.call(args).forEach(function (arg) {
     if (isExtendingArg(arg)) {
       var previousArgIndex = Math.max(0, result.length - 1)
-      result[ previousArgIndex ] = objectAssign({}, result[ previousArgIndex ], arg)
+      result[previousArgIndex] = objectAssign({}, result[previousArgIndex], arg)
     } else {
-      result.push(isFluentArg(arg) ? arg : { value: arg })
+      result.push(isFluentArg(arg) ? arg : {value: arg})
     }
   })
   return result
