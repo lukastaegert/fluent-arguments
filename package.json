@@ -4,6 +4,7 @@
   "author": "Lukas Taegert <lukas.taegert@tngtech.com>",
   "license": "MIT",
   "main": "index.js",
+  "files": ["index.js"],
   "config": {
     "validate-commit-msg": {
       "types": [
@@ -31,6 +32,9 @@
     "url": "https://github.com/lukastaegert/fluent-arguments/issues"
   },
   "homepage": "https://github.com/lukastaegert/fluent-arguments#readme",
+  "dependencies": {
+    "object-assign": "^4.1.1"
+  },
   "devDependencies": {
     "chai": "^4.0.0",
     "codecov": "^2.2.0",
@@ -42,9 +46,6 @@
     "standard": "^10.0.2",
     "testdouble": "^2.1.2",
     "validate-commit-msg": "^2.12.1"
-  },
-  "dependencies": {
-    "object-assign": "^4.1.1"
   },
   "scripts": {
     "test": "mocha",
