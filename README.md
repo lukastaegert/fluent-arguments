@@ -1,5 +1,6 @@
 # fluent-arguments
 
+
 *When simple arguments just don't cut it.*
 
 [![npm](https://img.shields.io/npm/v/fluent-arguments.svg?maxAge=3600)](https://www.npmjs.com/package/fluent-arguments)
@@ -8,7 +9,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?maxAge=3600)](http://standardjs.com/)
 [![npm](https://img.shields.io/npm/dm/fluent-arguments.svg?maxAge=3600)](https://www.npmjs.com/package/fluent-arguments)
 [![David](https://img.shields.io/david/lukastaegert/fluent-arguments.svg?maxAge=3600)](https://david-dm.org/lukastaegert/fluent-arguments)
-[![David](https://img.shields.io/david/dev/lukastaegert/fluent-arguments.svg?maxAge=3600)](https://david-dm.org/lukastaegert/fluent-arguments?type=dev)
+[![Greenkeeper badge](https://badges.greenkeeper.io/lukastaegert/fluent-arguments.svg)](https://greenkeeper.io/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?maxAge=3600)](https://github.com/semantic-release/semantic-release)
 
 ## The problem
