@@ -1,6 +1,5 @@
 # fluent-arguments
 
-
 *When simple arguments just don't cut it.*
 
 [![npm](https://img.shields.io/npm/v/fluent-arguments.svg?maxAge=3600)](https://www.npmjs.com/package/fluent-arguments)
