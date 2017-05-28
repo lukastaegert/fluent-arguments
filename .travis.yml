@@ -10,11 +10,12 @@ node_js:
   - '4'
 before_install:
   - npm i -g npm@^4.0.0
-script:
-  - istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -R spec
-  - codecov
 before_script:
   - npm prune
+script:
+  - node build
+  - istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -R spec
+  - codecov
 after_success:
   - 'curl -Lo travis_after_all.py https://git.io/travis_after_all'
   - python travis_after_all.py
