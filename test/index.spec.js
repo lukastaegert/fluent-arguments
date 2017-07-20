@@ -1,4 +1,5 @@
 /* eslint-env mocha */
+/* eslint-disable tree-shaking/no-side-effects-in-initialization */
 
 var fluentArgs = require('../dist/index')
 var createFunc = fluentArgs.createFunc

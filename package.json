@@ -41,9 +41,16 @@
   },
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.5.1",
+    "babel-preset-latest": "^6.24.1",
     "chai": "^4.0.0",
     "codecov": "^2.2.0",
+    "eslint": "^4.2.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-tree-shaking": "^1.1.1",
     "husky": "^0.14.0",
     "istanbul": "^0.4.5",
     "lint-staged": "^4.0.0",
@@ -52,7 +59,6 @@
     "rollup": "^0.45.1",
     "rollup-plugin-babel": "^2.7.1",
     "semantic-release": "^6.3.6",
-    "standard": "^10.0.2",
     "testdouble": "^3.0.0",
     "validate-commit-msg": "^2.12.1"
   },
@@ -68,8 +74,8 @@
   },
   "lint-staged": {
     "*.js": [
-      "prettier-standard",
-      "standard --fix",
+      "npm run lint",
+      "eslint --fix",
       "git add"
     ]
   }

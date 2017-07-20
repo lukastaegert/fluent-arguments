@@ -1,3 +1,5 @@
+/* eslint-disable tree-shaking/no-side-effects-in-initialization */
+
 const rollup = require('rollup')
 const babel = require('rollup-plugin-babel')
 
@@ -7,16 +9,7 @@ rollup
     external: ['core-js/library/fn/object/assign'],
     plugins: [
       babel({
-        presets: [
-          [
-            'env',
-            {
-              modules: false,
-              loose: true,
-              targets: { node: 4 }
-            }
-          ]
-        ],
+        presets: [['latest', { es2015: { modules: false, loose: true } }]],
         plugins: ['external-helpers']
       })
     ]

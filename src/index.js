@@ -3,20 +3,16 @@ import objectAssign from 'core-js/library/fn/object/assign'
 const EXTENDING_ARG_IDENTIFIER = 'X'
 const NON_EXTENDING_ARG_IDENTIFIER = 'N'
 
-const extendingPrototype = Object.defineProperty({}, '__FlArg__', {
-  value: EXTENDING_ARG_IDENTIFIER
-})
-
-const nonExtendingPrototype = Object.defineProperty({}, '__FlArg__', {
-  value: NON_EXTENDING_ARG_IDENTIFIER
-})
-
 const isFluentArg = arg => arg.__FlArg__
 const isExtendingArg = arg => arg.__FlArg__ === EXTENDING_ARG_IDENTIFIER
 
 function getBasicArgObject (setup) {
   const fluentArg = Object.create(
-    setup.extendsPrevious ? extendingPrototype : nonExtendingPrototype
+    Object.defineProperty({}, '__FlArg__', {
+      value: setup.extendsPrevious
+        ? EXTENDING_ARG_IDENTIFIER
+        : NON_EXTENDING_ARG_IDENTIFIER
+    })
   )
   objectAssign(fluentArg, setup.extra)
   return fluentArg
