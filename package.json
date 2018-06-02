@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^6.0.1",
-    "@commitlint/config-angular": "^6.0.2",
+    "@commitlint/config-angular": "^7.0.0",
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-env": "^1.6.1",
