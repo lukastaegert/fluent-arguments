@@ -6,8 +6,8 @@ notifications:
   email: true
 node_js:
   - 'node'
-  - '8'
   - '6'
+  - '8'
 before_install:
   - npm i -g npm@5
 before_script:
