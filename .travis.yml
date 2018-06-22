@@ -10,8 +10,9 @@ node_js:
   - '8'
 before_install:
   - npm i -g npm@5
+install:
+  - npm i
 before_script:
-  - npm prune
   - npm run build
 script:
   - istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -R spec
