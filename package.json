@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/lukastaegert/fluent-arguments#readme",
   "dependencies": {
-    "core-js": "^2.5.7"
+    "core-js": "^3.4.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
